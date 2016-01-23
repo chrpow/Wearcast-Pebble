@@ -1,0 +1,62 @@
+{
+    "appKeys": {
+        "KEY_CONDITIONS": 1,
+        "KEY_TEMPERATURE": 0
+    },
+    "capabilities": [
+        "location"
+    ],
+    "companyName": "cmpowell97@gmail.com",
+    "longName": "Wearcast 2.0",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "fonts/black-forest.regular.ttf",
+                "name": "BLACK_FOREST_48",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/perfect_dos.ttf",
+                "name": "FONT_PERFECT_DOS_18",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/perfect_dos.ttf",
+                "name": "FONT_PERFECT_DOS_48",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/Txt.ttf",
+                "name": "FONT_TXT_48",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/Txt.ttf",
+                "name": "FONT_TXT_18",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "images/background.png",
+                "name": "IMAGE_BACKGROUND",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "Wearcast 2.0",
+    "targetPlatforms": [
+        "aplite"
+    ],
+    "uuid": "64130c8c-de84-4b63-9649-08809270c4fe",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
