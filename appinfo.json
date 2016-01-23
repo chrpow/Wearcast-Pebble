@@ -1,0 +1,111 @@
+{
+    "appKeys": {
+        "WEATHER_CITY_KEY": 2,
+        "WEATHER_ICON_KEY": 0,
+        "WEATHER_TEMPERATURE_KEY": 1
+    },
+    "capabilities": [
+        "location"
+    ],
+    "companyName": "Pebble",
+    "longName": "Tutorial-3-3",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "fonts/Txt.ttf",
+                "name": "FONT_TXT_12",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/Txt.ttf",
+                "name": "FONT_TXT_18",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "images/head - hat.png",
+                "name": "IMAGE_HAT",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Umbrella.png",
+                "name": "IMAGE_UMBRELLA",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Long Sleeve.png",
+                "name": "IMAGE_LONG_SLEEVE",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/legs - pants shoes.png",
+                "name": "IMAGE_PANTS_SHOES",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Sweater.png",
+                "name": "IMAGE_SWEATER",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Short Sleeve.png",
+                "name": "IMAGE_SHORT_SLEEVE",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Rain Jacket.png",
+                "name": "IMAGE_RAIN_JACKET",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/legs - shorts shoes.png",
+                "name": "IMAGE_SHORTS_SHOES",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/legs - pants boots.png",
+                "name": "IMAGE_PANTS_BOOTS",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/head - empty.png",
+                "name": "IMAGE_EYES",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Coat.png",
+                "name": "IMAGE_COAT",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "fonts/black-forest.regular.ttf",
+                "name": "FONT_BLACK_FOREST_48",
+                "targetPlatforms": null,
+                "type": "font"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "Tutorial-3-3",
+    "targetPlatforms": [
+        "aplite"
+    ],
+    "uuid": "22b7e6da-ec32-412f-a141-94abcd29c92b",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
