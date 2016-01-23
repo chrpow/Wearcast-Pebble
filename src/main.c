@@ -22,13 +22,11 @@ static Window *s_main_window;
 static TextLayer *s_logo_layer;
 static TextLayer *s_time_layer;
 static TextLayer *s_weather_layer;
-/*
-static BitmapLayer *s_background_layer;
-static GBitmap *s_background_bitmap;
-*/
+
 static GFont s_logo_font;
 static GFont s_time_font;
 static GFont s_weather_font;
+//static GBitmap *s_clothes_bitmap;
 
 static void inbox_received_callback(DictionaryIterator *iterator, void *context) {
   // Store incoming information
@@ -98,17 +96,6 @@ static void main_window_load(Window *window) {
   // Get information about the Window
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
-/*
-  // Create GBitmap
-  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BACKGROUND);
-
-  // Create BitmapLayer to display the GBitmap
-  s_background_layer = bitmap_layer_create(bounds);
-
-  // Set the bitmap onto the layer and add to the window
-  bitmap_layer_set_bitmap(s_background_layer, s_background_bitmap);
-  layer_add_child(window_layer, bitmap_layer_get_layer(s_background_layer));
-*/
   
   // Create logo layer
   s_logo_layer = text_layer_create(
@@ -163,13 +150,7 @@ static void main_window_unload(Window *window) {
 
   // Unload GFont
   fonts_unload_custom_font(s_time_font);
-/*
-  // Destroy GBitmap
-  gbitmap_destroy(s_background_bitmap);
-
-  // Destroy BitmapLayer
-  bitmap_layer_destroy(s_background_layer);
-*/
+  
   // Destroy weather elements
   text_layer_destroy(s_weather_layer);
   fonts_unload_custom_font(s_weather_font);
@@ -179,10 +160,7 @@ static void main_window_unload(Window *window) {
 static void init() {
   // Create main Window element and assign to pointer
   s_main_window = window_create();
-/*
-  // Set the background color
-  window_set_background_color(s_main_window, GColorBlack);
-*/
+
   // Set handlers to manage the elements inside the Window
   window_set_window_handlers(s_main_window, (WindowHandlers) {
     .load = main_window_load,

@@ -12,20 +12,120 @@
     "resources": {
         "media": [
             {
+                "file": "images/Scarf",
+                "name": "IMAGE_SCARF",
+                "targetPlatforms": [
+                    "aplite"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Hat",
+                "name": "IMAGE_HAT",
+                "targetPlatforms": [
+                    "aplite"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Rain Jacket",
+                "name": "IMAGE_RAIN_JACKET",
+                "targetPlatforms": [
+                    "aplite"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Sweater",
+                "name": "IMAGE_SWEATER",
+                "targetPlatforms": [
+                    "aplite"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Coat",
+                "name": "IMAGE_COAT",
+                "targetPlatforms": [
+                    "aplite"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Umbrella",
+                "name": "IMAGE_UMBRELLA",
+                "targetPlatforms": [
+                    "aplite"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Sunglasses",
+                "name": "IMAGE_SUNGLASSES",
+                "targetPlatforms": [
+                    "aplite"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Gloves",
+                "name": "IMAGE_GLOVES",
+                "targetPlatforms": [
+                    "aplite"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Shoes",
+                "name": "IMAGE_SHOES",
+                "targetPlatforms": [
+                    "aplite"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Boots",
+                "name": "IMAGE_BOOTS",
+                "targetPlatforms": [
+                    "aplite"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Shorts",
+                "name": "IMAGE_SHORTS",
+                "targetPlatforms": [
+                    "aplite"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Pants",
+                "name": "IMAGE_PANTS",
+                "targetPlatforms": [
+                    "aplite"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Short Sleeve",
+                "name": "IMAGE_SHORT_SLEEVE",
+                "targetPlatforms": [
+                    "aplite"
+                ],
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Long Sleeve",
+                "name": "IMAGE_LONG_SLEEVE",
+                "targetPlatforms": [
+                    "aplite"
+                ],
+                "type": "bitmap"
+            },
+            {
                 "file": "fonts/black-forest.regular.ttf",
                 "name": "BLACK_FOREST_48",
-                "targetPlatforms": null,
-                "type": "font"
-            },
-            {
-                "file": "fonts/perfect_dos.ttf",
-                "name": "FONT_PERFECT_DOS_18",
-                "targetPlatforms": null,
-                "type": "font"
-            },
-            {
-                "file": "fonts/perfect_dos.ttf",
-                "name": "FONT_PERFECT_DOS_48",
                 "targetPlatforms": null,
                 "type": "font"
             },
@@ -40,12 +140,6 @@
                 "name": "FONT_TXT_18",
                 "targetPlatforms": null,
                 "type": "font"
-            },
-            {
-                "file": "images/background.png",
-                "name": "IMAGE_BACKGROUND",
-                "targetPlatforms": null,
-                "type": "bitmap"
             }
         ]
     },
