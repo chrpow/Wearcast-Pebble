@@ -1,35 +1,48 @@
 #include <pebble.h>
+#include <stdio.h>
 
 #define KEY_TEMPERATURE 0
 #define KEY_CONDITIONS 1
+#define KEY_HEAD 2
+#define KEY_CHEST 3
+#define KEY_LEGS 4
+#define KEY_UMBRELLA 5
 
-#define SHORT_SLEEVE    0
-#define LONG_SLEEVE     1
-#define PANTS           2
-#define SHORTS          3
-#define BOOTS           4
-#define SHOES           5
-#define GLOVES          6
-#define SUNGLASSES      7
-#define UMBRELLA        8
-#define COAT            9
-#define SWEATER         10
-#define RAIN_JACKET     11
-#define HAT             12
-#define SCARF           13
-
+// main window
 static Window *s_main_window;
+
+// text layers
 static TextLayer *s_logo_layer;
 static TextLayer *s_time_layer;
 static TextLayer *s_weather_layer;
 
+// fonts
 static GFont s_logo_font;
 static GFont s_time_font;
 static GFont s_weather_font;
-//static GBitmap *s_clothes_bitmap;
+
+// clothes layers
+static BitmapLayer *s_chest_layer;
+static BitmapLayer *s_legs_layer;
+static BitmapLayer *s_feet_layer;
+static BitmapLayer *s_face_layer;
+static BitmapLayer *s_head_layer;
+static BitmapLayer *s_accessory_layer;
+
+// clothes bitmaps
+static GBitmap *s_chest_bitmap;
+static GBitmap *s_legs_bitmap;
+static GBitmap *s_feet_bitmap;
+static GBitmap *s_face_bitmap;
+static GBitmap *s_head_bitmap;
+static GBitmap *s_accessory_bitmap;
 
 static void inbox_received_callback(DictionaryIterator *iterator, void *context) {
   // Store incoming information
+  static char head_buffer[8];
+  static char chest_buffer[8];
+  static char legs_buffer[8];
+  static char umbrella_buffer[8];
   static char temperature_buffer[8];
   static char conditions_buffer[32];
   static char weather_layer_buffer[32];
@@ -37,11 +50,17 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
   // Read tuples for data
   Tuple *temp_tuple = dict_find(iterator, KEY_TEMPERATURE);
   Tuple *conditions_tuple = dict_find(iterator, KEY_CONDITIONS);
-
+  Tuple *head_tuple = dict_find(iterator, KEY_HEAD);
+  Tuple *chest_tuple = dict_find(iterator, KEY_CHEST);
+  Tuple *legs_tuple = dict_find(iterator, KEY_LEGS);
+  Tuple *umbrella_tuple = dict_find(iterator, KEY_UMBRELLA);
+  
   // If all data is available, use it
-  if(temp_tuple && conditions_tuple) {
+  if(temp_tuple && conditions_tuple && head_tuple && chest_tuple && legs_tuple && umbrella_tuple) {
     snprintf(temperature_buffer, sizeof(temperature_buffer), "%dF", (int)temp_tuple->value->int32);
     snprintf(conditions_buffer, sizeof(conditions_buffer), "%s", conditions_tuple->value->cstring);
+    //snprintf(head_buffer, sizeof(head_buffer), "%dF", (int)temp_tuple->value->int32);
+    
 
     // Assemble full string and display
     snprintf(weather_layer_buffer, sizeof(weather_layer_buffer), "%s-%s", temperature_buffer, conditions_buffer);
@@ -59,6 +78,7 @@ static void outbox_failed_callback(DictionaryIterator *iterator, AppMessageResul
 
 static void outbox_sent_callback(DictionaryIterator *iterator, void *context) {
   APP_LOG(APP_LOG_LEVEL_INFO, "Outbox send success!");
+  
 }
 
 static void update_time() {
@@ -97,21 +117,30 @@ static void main_window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
   
+  
+  // Create BitmapLayer to display the GBitmap
+  s_chest_layer = bitmap_layer_create(
+  GRect(0, 20, bounds.size.w, 40));
+
+  // Set the bitmap onto the layer and add to the window
+  bitmap_layer_set_bitmap(s_chest_layer, s_chest_bitmap);
+  layer_add_child(window_layer, bitmap_layer_get_layer(s_chest_layer));
+  
   // Create logo layer
   s_logo_layer = text_layer_create(
-  GRect(0, 140, bounds.size.w, 20));
+  GRect(0, 146, bounds.size.w, 20));
   
   // Fill logo
   text_layer_set_text_color(s_logo_layer, GColorBlack);
   text_layer_set_text(s_logo_layer, "WEARCAST");
   text_layer_set_text_alignment(s_logo_layer, GTextAlignmentCenter);
-  s_logo_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_TXT_18));
+  s_logo_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_TXT_12));
   text_layer_set_font(s_logo_layer, s_logo_font);
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_logo_layer));
   
   // Create the TextLayer with specific bounds
   s_time_layer = text_layer_create(
-      GRect(0, 88, bounds.size.w, 50));
+      GRect(0, 94, bounds.size.w, 50));
 
   // Improve the layout to be more like a watchface
   //text_layer_set_background_color(s_time_layer, GColorClear);
@@ -130,7 +159,7 @@ static void main_window_load(Window *window) {
 
   // Create temperature Layer
   s_weather_layer = text_layer_create(
-      GRect(0, 80, bounds.size.w, 18));
+      GRect(0, 86, bounds.size.w, 18));
 
   // Style the text
   //text_layer_set_background_color(s_weather_layer, GColorClear);
@@ -187,6 +216,12 @@ static void init() {
 }
 
 static void deinit() {
+  // Destroy GBitmap
+  gbitmap_destroy(s_chest_bitmap);
+
+  // Destroy BitmapLayer
+  bitmap_layer_destroy(s_chest_layer);
+  
   // Destroy Window
   window_destroy(s_main_window);
 }
@@ -196,3 +231,4 @@ int main(void) {
   app_event_loop();
   deinit();
 }
+

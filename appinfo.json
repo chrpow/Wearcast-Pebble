@@ -1,126 +1,24 @@
 {
     "appKeys": {
+        "KEY_CHEST": 3,
         "KEY_CONDITIONS": 1,
-        "KEY_TEMPERATURE": 0
+        "KEY_HEAD": 2,
+        "KEY_LEGS": 4,
+        "KEY_TEMPERATURE": 0,
+        "KEY_UMBRELLA": 5
     },
     "capabilities": [
         "location"
     ],
     "companyName": "cmpowell97@gmail.com",
-    "longName": "Wearcast 2.0",
+    "longName": "Wearcast Pebble",
     "projectType": "native",
     "resources": {
         "media": [
             {
-                "file": "images/Scarf",
-                "name": "IMAGE_SCARF",
-                "targetPlatforms": [
-                    "aplite"
-                ],
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Hat",
-                "name": "IMAGE_HAT",
-                "targetPlatforms": [
-                    "aplite"
-                ],
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Rain Jacket",
-                "name": "IMAGE_RAIN_JACKET",
-                "targetPlatforms": [
-                    "aplite"
-                ],
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Sweater",
-                "name": "IMAGE_SWEATER",
-                "targetPlatforms": [
-                    "aplite"
-                ],
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Coat",
+                "file": "images/Coat.png",
                 "name": "IMAGE_COAT",
-                "targetPlatforms": [
-                    "aplite"
-                ],
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Umbrella",
-                "name": "IMAGE_UMBRELLA",
-                "targetPlatforms": [
-                    "aplite"
-                ],
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Sunglasses",
-                "name": "IMAGE_SUNGLASSES",
-                "targetPlatforms": [
-                    "aplite"
-                ],
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Gloves",
-                "name": "IMAGE_GLOVES",
-                "targetPlatforms": [
-                    "aplite"
-                ],
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Shoes",
-                "name": "IMAGE_SHOES",
-                "targetPlatforms": [
-                    "aplite"
-                ],
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Boots",
-                "name": "IMAGE_BOOTS",
-                "targetPlatforms": [
-                    "aplite"
-                ],
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Shorts",
-                "name": "IMAGE_SHORTS",
-                "targetPlatforms": [
-                    "aplite"
-                ],
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Pants",
-                "name": "IMAGE_PANTS",
-                "targetPlatforms": [
-                    "aplite"
-                ],
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Short Sleeve",
-                "name": "IMAGE_SHORT_SLEEVE",
-                "targetPlatforms": [
-                    "aplite"
-                ],
-                "type": "bitmap"
-            },
-            {
-                "file": "images/Long Sleeve",
-                "name": "IMAGE_LONG_SLEEVE",
-                "targetPlatforms": [
-                    "aplite"
-                ],
+                "targetPlatforms": null,
                 "type": "bitmap"
             },
             {
@@ -131,26 +29,26 @@
             },
             {
                 "file": "fonts/Txt.ttf",
-                "name": "FONT_TXT_48",
+                "name": "FONT_TXT_18",
                 "targetPlatforms": null,
                 "type": "font"
             },
             {
                 "file": "fonts/Txt.ttf",
-                "name": "FONT_TXT_18",
+                "name": "FONT_TXT_12",
                 "targetPlatforms": null,
                 "type": "font"
             }
         ]
     },
     "sdkVersion": "3",
-    "shortName": "Wearcast 2.0",
+    "shortName": "Wearcast",
     "targetPlatforms": [
         "aplite"
     ],
     "uuid": "64130c8c-de84-4b63-9649-08809270c4fe",
     "versionLabel": "1.0",
     "watchapp": {
-        "watchface": false
+        "watchface": true
     }
 }

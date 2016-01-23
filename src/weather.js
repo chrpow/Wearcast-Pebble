@@ -1,5 +1,7 @@
 var myAPIKey = '025208b931ba89abab320d0e2ed73b69';
 
+var configuration = JSON.parse(decodeURIComponent(e.response));
+
 var xhrRequest = function (url, type, callback) {
   var xhr = new XMLHttpRequest();
   xhr.onload = function () {
@@ -28,10 +30,22 @@ function locationSuccess(pos) {
       var conditions = json.weather[0].main;      
       console.log("Conditions are " + conditions);
       
+      // compute values to return
+      var head = headCalculator(temperature, conditions);
+      var chest = chestCalculator(temperature, conditions);
+      var legs = legsCalculator(temperature, conditions);
+      var umbrella = umbrellaCalculator(conditions);
+      
+      console.log("Clothes are" + head + ""+ chest + "" + legs + "" + umbrella + "");
+      
       // Assemble dictionary using our keys
       var dictionary = {
         "KEY_TEMPERATURE": temperature,
         "KEY_CONDITIONS": conditions.toUpperCase()
+        "KEY_HEAD" : head;
+        "KEY_CHEST" : chest;
+        "KEY_LEGS" : legs;
+        "KEY_UMBRELLA" : umbrella;
       };
 
       // Send to Pebble
@@ -45,6 +59,46 @@ function locationSuccess(pos) {
       );
     }      
   );
+}
+
+function chestCalculator(temp, cond) {
+  var weather = cond.toLowerCase;
+  if (weather == 'snow' || temp <= 42)
+    return 1; // coat
+  else if (weather == 'rain')
+    return 2; // rain jacket
+  else if (temp <= 50)
+    return 3; // sweater
+  else if (temp <= 60)
+    return 4; // long sleeve
+  else
+    return 5; // short sleeve
+}
+
+function legsCalculator(temp, cond) {
+  var weather = cond.toLowerCase;
+  if (temp >= 60 && weather != 'snow' && weather != 'rain')
+    return 1; // pants shoes
+  else if (weather == 'snow' || weather == rain)
+    return 2; // pants boots
+  else
+    return 3; // shorts shoes
+}
+
+function headCalculator(temp, cond) {
+  var weather = cond.toLowerCase;
+  if (temp <= 42 || weather == 'snow' || weather == 'rain')
+    return 1; // hat
+  else
+    return 2; //none
+}
+
+function umbrellaCalculator(cond) {
+  var weather = cond.toLowerCase;
+  if (weather == umbrella)
+    return 1; // umbrella
+  else
+    return 2; // none
 }
 
 function locationError(err) {
