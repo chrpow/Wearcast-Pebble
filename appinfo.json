@@ -1,26 +1,55 @@
 {
     "appKeys": {
-        "WEATHER_CITY_KEY": 2,
         "WEATHER_ICON_KEY": 0,
         "WEATHER_TEMPERATURE_KEY": 1
     },
     "capabilities": [
         "location"
     ],
-    "companyName": "Pebble",
-    "longName": "Tutorial-3-3",
+    "companyName": "Chris Powell",
+    "longName": "Wearcast Pebble",
     "projectType": "native",
     "resources": {
         "media": [
             {
+                "file": "images/Cloud.png",
+                "name": "IMAGE_CLOUDY",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Rain.png",
+                "name": "IMAGE_RAIN",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/Snow.png",
+                "name": "IMAGE_SNOW",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/SUN.png",
+                "name": "IMAGE_SUNNY",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
+                "file": "images/legs - shorts shoes.png",
+                "name": "IMAGE_SHORTS_SHOES",
+                "targetPlatforms": null,
+                "type": "bitmap"
+            },
+            {
                 "file": "fonts/Txt.ttf",
-                "name": "FONT_TXT_12",
+                "name": "FONT_TXT_18",
                 "targetPlatforms": null,
                 "type": "font"
             },
             {
                 "file": "fonts/Txt.ttf",
-                "name": "FONT_TXT_18",
+                "name": "FONT_TXT_12",
                 "targetPlatforms": null,
                 "type": "font"
             },
@@ -67,12 +96,6 @@
                 "type": "bitmap"
             },
             {
-                "file": "images/legs - shorts shoes.png",
-                "name": "IMAGE_SHORTS_SHOES",
-                "targetPlatforms": null,
-                "type": "bitmap"
-            },
-            {
                 "file": "images/legs - pants boots.png",
                 "name": "IMAGE_PANTS_BOOTS",
                 "targetPlatforms": null,
@@ -92,6 +115,12 @@
             },
             {
                 "file": "fonts/black-forest.regular.ttf",
+                "name": "FONT_BLACK_FOREST_18",
+                "targetPlatforms": null,
+                "type": "font"
+            },
+            {
+                "file": "fonts/black-forest.regular.ttf",
                 "name": "FONT_BLACK_FOREST_48",
                 "targetPlatforms": null,
                 "type": "font"
@@ -99,7 +128,7 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "Tutorial-3-3",
+    "shortName": "Wearcast",
     "targetPlatforms": [
         "aplite"
     ],
